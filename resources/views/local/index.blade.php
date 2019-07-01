@@ -48,16 +48,30 @@
                             <strong>{{$item[0]['name']}}</strong>
                         </div>
                         @if(isset($item['son']))
-                            @foreach($item['son'] as $value)
-                                <div class="col-sm-2 text-center">
-                                    <a href="{{$value['url']}}" title="" target="_blank">{{$value['name']}}</a>
-                                </div>
+                            @foreach($item['son'] as $k=>$value)
+                                @if($k<4)
+                                    <div class="col-sm-2 text-center">
+                                        <a href="{{$value['url']}}" title="" target="_blank">{{$value['name']}}</a>
+                                    </div>
+                                @else
+                                    @break
+                                @endif
                             @endforeach
                         @endif
-                        @if(count($links_list)>5)
+                        @if(isset($item['son']) && count($item['son'])>=4)
                             <div class="col-sm-2 text-center">
-                                <a class="btn btn-outline-success btn-sm" title="更多" target="_blank"
-                                   style="font-size: 10px;">更多>></a>
+                                <div class="dropdown show">
+                                    <a class="btn btn-outline-success btn-sm dropdown-toggle" style="font-size: 10px;"
+                                       href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        更多
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            @foreach(array_splice($item['son'],4) as $ite)
+                                                <a href="{{$ite['url']}}" class="dropdown-item">{{$ite['name']}}</a>
+                                            @endforeach
+                                    </div>
+                                </div>
                             </div>
                         @endif
                     </div>
@@ -68,7 +82,8 @@
     <div class="container">
         <div class="row footer">
             <div class="mt-center">
-                Copyright © 陇ICP备19000188号-1 <img src="{{asset('img/ba.png')}}"> - <a href="http://pfinal.club/">衿若科技</a>
+                Copyright © 陇ICP备19000188号-1 <img src="{{asset('img/ba.png')}}"> - <a
+                        href="http://pfinal.club/">衿若科技</a>
                 <br>
             </div>
         </div>
@@ -78,6 +93,6 @@
     <script>
         $(function () {
             $('#myTab li:first-child a').tab('show');
-        })
+        });
     </script>
 @endsection

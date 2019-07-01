@@ -23,8 +23,7 @@ class HomeController extends CommonController
         $engine_list = $this->engine->where('statue', 1)->get();
         // 友情连接
         $links_list = LinkCateController::get_list();
-        //dd($links_list);
-        return view($this->temple.'.index', compact('modules', 'engine_list','links_list'));
+        return view($this->temple.'.index', compact('modules', 'engine_list', 'links_list'));
     }
 
     public function about_me()
