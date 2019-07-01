@@ -47,8 +47,15 @@ class EngineController extends AdminController
         $grid->column('name', '引擎名');
         $grid->column('api', '引擎连接')->label();
         $grid->column('statue', '状态')->select([0 => '下线', 1 => '上线']);
+        $grid->column('engine_sn', '引擎标识');
+        $grid->column('params_name', '参数名称');
         $grid->column('created_at', trans('admin.created_at'));
         $grid->column('updated_at', trans('admin.updated_at'));
+        $grid->actions(
+            function (Grid\Displayers\Actions $actions) {
+                $actions->disableView();
+            }
+        );
 
         return $grid;
     }
@@ -61,8 +68,11 @@ class EngineController extends AdminController
         $form->text('name', '引擎名')
             ->creationRules(['required', "unique:engine"])
             ->updateRules(['required', "unique:engine,name,{{id}}"]);
+        $form->text('engine_sn', '引擎标识')->rules('required');
         $form->text('api', '引擎连接')->rules('required');
+        $form->text('params_name', '参数名称')->rules('required');
         $form->hidden('statue')->value(0);
+
         return $form;
     }
 

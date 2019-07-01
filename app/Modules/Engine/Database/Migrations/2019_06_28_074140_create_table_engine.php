@@ -20,6 +20,8 @@ class CreateTableEngine extends Migration
                 $table->string('name')->comment('搜索引擎管理');
                 $table->string('api')->comment('搜索引擎url');
                 $table->tinyInteger('statue')->default(1)->comment('上线或者下线');
+                $table->string('engine_sn')->comment('搜索引擎管理');
+                $table->string('params_name')->comment('参数管理');
                 $table->timestamps();
             }
         );

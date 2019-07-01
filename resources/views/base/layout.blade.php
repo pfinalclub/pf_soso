@@ -8,17 +8,12 @@
     <title>{{$config?$config->title:'PFinal'}}</title>
     <meta name="keywords" content="{{$config?$config->keywords:''}}">
     <meta name="description" content="{{$config?$config->description:''}}">
-    <meta name="baidu-site-verification" content="Rj8Dn3976y"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/laravel-admin/font-awesome/css/font-awesome.min.css')}}">
     <script src="{{asset('js/app.js')}}"></script>
-    {{--  <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-      <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
-      <script src="{{asset('js/app.js')}}"></script>
-      <script src="{{asset('js/swiper.animate.min.js')}}"></script>
-      <script src="{{asset('js/swiper.min.js')}}"></script>--}}
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
 @if($config&&$config->template_id==0)
