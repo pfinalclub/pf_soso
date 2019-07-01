@@ -50,7 +50,7 @@
                         @if(isset($item['son']))
                             @foreach($item['son'] as $value)
                                 <div class="col-sm-2 text-center">
-                                    <a href="https://www.taobao.com" title="" target="_blank">{{$value['name']}}</a>
+                                    <a href="{{$value['url']}}" title="" target="_blank">{{$value['name']}}</a>
                                 </div>
                             @endforeach
                         @endif
