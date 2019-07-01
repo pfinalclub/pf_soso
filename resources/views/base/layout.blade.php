@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="{{asset('vendor/laravel-admin/font-awesome/css/font-awesome.min.css')}}">
     <script src="{{asset('js/app.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c2b8b7cdde25af7840ecc81188abf05e";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
 @if($config&&$config->template_id==0)

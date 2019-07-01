@@ -100,3 +100,11 @@ form {
 .ulist {
     line-height: 38px;
 }
+.footer {
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+    line-height: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
+}

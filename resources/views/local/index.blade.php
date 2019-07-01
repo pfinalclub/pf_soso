@@ -65,6 +65,14 @@
             @endif
         </article>
     </div>
+    <div class="container">
+        <div class="row footer">
+            <div class="mt-center">
+                Copyright © 陇ICP备19000188号-1 <img src="{{asset('img/ba.png')}}"> - <a href="http://pfinal.club/">衿若科技</a>
+                <br>
+            </div>
+        </div>
+    </div>
 @endsection
 @section("my-script")
     <script>
