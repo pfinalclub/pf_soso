@@ -9,7 +9,7 @@
     <meta name="keywords" content="{{$config?$config->keywords:''}}">
     <meta name="description" content="{{$config?$config->description:''}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="{{asset('favicon.ico')}}" type="image/png">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/laravel-admin/font-awesome/css/font-awesome.min.css')}}">
     <script src="{{asset('js/app.js')}}"></script>
